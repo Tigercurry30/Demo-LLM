@@ -21,7 +21,7 @@ import lombok.RequiredArgsConstructor;
 public class HistoryController {
 
     private final HistoryRepository redisChatHistoryRepository;
-    private final ChatMemory redisChatMemory;
+    private final ChatMemory redisMemory;
 
     @GetMapping("/{type}")
     public List<String> getHistoryIds(@PathVariable("type") String type) {
@@ -30,7 +30,7 @@ public class HistoryController {
 
     @GetMapping("/{type}/{chatId}")
     public List<MessageVO> getHistory(@PathVariable("type") String type, @PathVariable("chatId") String chatId) {
-        List<Message> message = redisChatMemory.get(chatId, Integer.MAX_VALUE);
+        List<Message> message = redisMemory.get(chatId, Integer.MAX_VALUE);
         if(message == null) {
             return List.of();
         }

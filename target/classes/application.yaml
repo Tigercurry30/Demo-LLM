@@ -15,13 +15,19 @@ spring:
           model: text-embedding-v3
           dimensions: 1024
 
-    # Redis Configuration
+  # Redis Configuration
   data:
     redis:
       host: 10.122.195.240
       port: 6379
       database: 1
       password: 123456
+
+  servlet:
+    multipart:
+      max-file-size: 104857600
+      max-request-size: 104857600
+
 
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver

@@ -2,7 +2,6 @@ DROP DATABASE IF EXISTS `demo-llm-db`;
 CREATE DATABASE IF NOT EXISTS `demo-llm-db`;
 USE `demo-llm-db`;
 
-----------------------------------------------------------------------------------------------------------------------------
 
 DROP TABLE IF EXISTS `course`;
 CREATE TABLE IF NOT EXISTS `course`(
@@ -26,7 +25,6 @@ INSERT INTO `course`(`id`, `name`, `edu`, `type`, `price`, `duration`) VALUES
     (6, '新媒体运营', 0, '自媒体', 10999, 61),
     (7, 'UI设计', 2, '设计', 11999, 66);
 
-----------------------------------------------------------------------------------------------------------------------------
 
 DROP TABLE IF EXISTS `course_reservation`;
 CREATE TABLE IF NOT EXISTS `course_reservation`(
@@ -44,7 +42,6 @@ DELETE FROM `course_reservation`;
 INSERT INTO `course_reservation` (`id`, `course`, `student_name`, `contact_info`, `school`, `remark`) VALUES
     (1, '新媒体运营', '李华', '12899762348', '广东校区', '安排一个好一点的老师');
 
-----------------------------------------------------------------------------------------------------------------------------
 
 DROP TABLE IF EXISTS `school`;
 CREATE TABLE IF NOT EXISTS `school`(

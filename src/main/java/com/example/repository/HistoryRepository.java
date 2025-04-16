@@ -1,7 +1,7 @@
 package com.example.repository;
 
 /*
-    会话管理
+    会话历史管理
  */
 import java.util.List;
 
