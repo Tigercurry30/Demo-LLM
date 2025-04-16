@@ -1,6 +1,7 @@
 package com.example.controller;
 
 
+import com.example.repository.HistoryRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.ai.chat.client.ChatClient;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,9 +16,12 @@ import static org.springframework.ai.chat.client.advisor.AbstractChatMemoryAdvis
 public class GameController {
 
     private final ChatClient gameChatClient;
+    private final HistoryRepository historyRepository;
 
     @RequestMapping(value = "/game", produces = "text/html; charset=utf-8")
     public Flux<String> game(String prompt, String chatId) {
+
+        historyRepository.insertHistoryIds("game", chatId);
 
         return gameChatClient.prompt()
                 .user(prompt)
