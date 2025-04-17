@@ -47,28 +47,30 @@ import io.micrometer.observation.ObservationRegistry;
 @Configuration
 public class CommonConfiguration {
 
-//    @Bean
-//    public RedisTemplate<String, Object> redisTemplate(RedisConnectionFactory connectionFactory) {
-//        RedisTemplate<String, Object> template = new RedisTemplate<>();
-//        template.setConnectionFactory(connectionFactory);
-//        template.setKeySerializer(new StringRedisSerializer());
-//
-//        // 配置 GenericJackson2JsonRedisSerializer 启用类型信息
-//        ObjectMapper objectMapper = new ObjectMapper();
-//        objectMapper.activateDefaultTyping(objectMapper.getPolymorphicTypeValidator(), ObjectMapper.DefaultTyping.NON_FINAL);
-//        GenericJackson2JsonRedisSerializer serializer = new GenericJackson2JsonRedisSerializer(objectMapper);
-//
-//        template.setValueSerializer(serializer);
-//        template.setHashKeySerializer(new StringRedisSerializer());
-//        template.setHashValueSerializer(serializer);
-//        template.afterPropertiesSet();
-//        return template;
-//    }
-//
-//    @Bean
-//    public ChatMemory chatMemory(RedisTemplate<String, Object> redisTemplate) {
-//        return new RedisMemory(redisTemplate);
-//    }
+/*
+    @Bean
+    public RedisTemplate<String, Object> redisTemplate(RedisConnectionFactory connectionFactory) {
+        RedisTemplate<String, Object> template = new RedisTemplate<>();
+        template.setConnectionFactory(connectionFactory);
+        template.setKeySerializer(new StringRedisSerializer());
+
+        // 配置 GenericJackson2JsonRedisSerializer 启用类型信息
+        ObjectMapper objectMapper = new ObjectMapper();
+        objectMapper.activateDefaultTyping(objectMapper.getPolymorphicTypeValidator(), ObjectMapper.DefaultTyping.NON_FINAL);
+        GenericJackson2JsonRedisSerializer serializer = new GenericJackson2JsonRedisSerializer(objectMapper);
+
+        template.setValueSerializer(serializer);
+        template.setHashKeySerializer(new StringRedisSerializer());
+        template.setHashValueSerializer(serializer);
+        template.afterPropertiesSet();
+        return template;
+    }
+
+    @Bean
+    public ChatMemory chatMemory(RedisTemplate<String, Object> redisTemplate) {
+        return new RedisMemory(redisTemplate);
+    }
+*/
 
     @Bean
     public ChatClient chatClient(AlibabaOpenAiChatModel model, ChatMemory chatMemory) {
